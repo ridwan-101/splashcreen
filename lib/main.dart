@@ -6,24 +6,23 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        debugShowCheckedModeBanner: false,
-        home: const SplashScreen());
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
+    );
   }
 }
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -33,47 +32,57 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Image(
-              image: AssetImage("assets/images/onthego.png"),
-            ),
-            SingleChildScrollView(
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const WelcomePage()),
-                  );
-                },
-                child: Container(
-                  height: MediaQuery.of(context).size.height *
-                      0.06, // 20% of the screen height
-                  width: MediaQuery.of(context).size.width *
-                      0.9, // 80% of the screen width
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF01497C),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-
-                  child: const Center(
-                    child: Text(
-                      "Welcome",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
-                        color: Colors.white,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/onthegobg.png"),
+            fit: BoxFit.none,
+          ),
+          color: Color(0xFF01497C),
+        ),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Image(
+                image: AssetImage("assets/images/onthegomain.png"),
+              ),
+              const SizedBox(height: 250),
+              SingleChildScrollView(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const WelcomePage(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: MediaQuery.of(context).size.height *
+                        0.06, // 20% of the screen height
+                    width: MediaQuery.of(context).size.width *
+                        0.9, // 80% of the screen width
+                    decoration: BoxDecoration(
+                      color: Colors.white, //
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Welcome",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0,
+                          color: Color(0xFF01497C),
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );

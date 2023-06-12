@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:welcome/ui/login_signupmessage.dart';
 
 class FinalMessage extends StatefulWidget {
   const FinalMessage({Key? key}) : super(key: key);
@@ -11,17 +12,17 @@ class _FinalMessageState extends State<FinalMessage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Effortless Payment Tracking",
-          style: TextStyle(fontSize: 19.0, fontWeight: FontWeight.bold),
-        ),
-      ),
+      // appBar: AppBar(
+      //   title: const Text(
+      //     "Effortless Payment Tracking",
+      //     style: TextStyle(fontSize: 19.0, fontWeight: FontWeight.bold),
+      //   ),
+      // ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/onthegobg.png"),
-            fit: BoxFit.cover,
+            fit: BoxFit.none,
           ),
           color: Color(0xFF01497C),
         ),
@@ -32,15 +33,29 @@ class _FinalMessageState extends State<FinalMessage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Image(
-                image: AssetImage("assets/images/person2.png"),
+                image: AssetImage("assets/images/newperson3.png"),
               ),
               const SizedBox(
                 height: 20,
               ),
+              // const Text(
+              //   "Simplify your \ninvoicing process ",
+              //   textAlign: TextAlign.center,
+              //   style: TextStyle(
+              //       fontWeight: FontWeight.bold,
+              //       fontSize: 30,
+              //       color: Colors.white),
+              // ),
+              // SizedBox(
+              //   height: 15,
+              // ),
               const Text(
-                "Simplify your invoicing process with OnDgo,\nthe ultimate invoice generating app designed\nto save you time and streamline your business.",
+                " Get real-time updates on invoice statuses, \nincluding pending, paid, and overdue payments",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                    color: Colors.white),
               ),
               const SizedBox(
                 height: 30,
@@ -48,7 +63,11 @@ class _FinalMessageState extends State<FinalMessage> {
               SingleChildScrollView(
                 child: GestureDetector(
                   onTap: () {
-                    // Route to Dashboard or any other page
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignupPage()),
+                    );
                   },
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.06,
@@ -63,7 +82,7 @@ class _FinalMessageState extends State<FinalMessage> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20.0,
-                          color: Colors.black,
+                          color: Color(0xFF01497C),
                         ),
                       ),
                     ),

@@ -12,17 +12,17 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Welcome",
-          style: TextStyle(fontSize: 19.0, fontWeight: FontWeight.bold),
-        ),
-      ),
+      // appBar: AppBar(
+      //   title: const Text(
+      //     "Welcome",
+      //     style: TextStyle(fontSize: 19.0, fontWeight: FontWeight.bold),
+      //   ),
+      // ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/onthegobg.png"),
-            fit: BoxFit.cover,
+            fit: BoxFit.none,
           ),
           color: Color(0xFF01497C),
         ),
@@ -32,14 +32,14 @@ class _WelcomePageState extends State<WelcomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Image(
-                image: AssetImage("assets/images/person1.png"),
+                image: AssetImage("assets/images/newperson1.png"),
                 fit: BoxFit.cover,
               ),
               const SizedBox(
                 height: 20,
               ),
               const Text(
-                " 'Simplify your invoicing process with OnDgo,\nthe ultimate invoice generating app designed\nto save you time and streamline your business.',",
+                "The ultimate invoice generating app designed \nto save you time and streamline your business.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,

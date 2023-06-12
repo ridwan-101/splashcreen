@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:welcome/ui/finalmessage.dart';
+import 'package:welcome/ui/paymenttrackingmessage.dart';
 
 class MessagePage extends StatefulWidget {
   const MessagePage({super.key});
@@ -12,17 +12,17 @@ class _MessagePageState extends State<MessagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Create Customed Invoice",
-          style: TextStyle(fontSize: 19.0, fontWeight: FontWeight.bold),
-        ),
-      ),
+      // appBar: AppBar(
+      //   title: const Text(
+      //     "Create Customed Invoice",
+      //     style: TextStyle(fontSize: 19.0, fontWeight: FontWeight.bold),
+      //   ),
+      // ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/onthegobg.png"),
-            fit: BoxFit.cover,
+            fit: BoxFit.none,
           ),
           color:
               Color(0xFF01497C), // Replace with your desired background color
@@ -39,7 +39,7 @@ class _MessagePageState extends State<MessagePage> {
                 height: 20,
               ),
               const Text(
-                "Design and personalize your invoices to reflect your brand's identity. Add your company logo and tailor the invoice fields to meet your specific business needs.",
+                "Design and personalize your invoices \nto reflect your brand's identity",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
